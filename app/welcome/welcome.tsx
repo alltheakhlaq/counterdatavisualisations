@@ -1,4 +1,5 @@
 import logo from "./logo.png";
+import { Link } from "react-router";
 
 export function Welcome() {
   return (
@@ -15,17 +16,15 @@ export function Welcome() {
             <nav className="rounded-2xl border border-black-200 p-6">
               <p className="leading-10 text-gray-700 text-center">Sloane Collection</p>
               <ul>
-                {resources.map(({ href, sloaneText, icon }) => (
-                  <li key={href}>
-                    <a
+                {resources.map(({ to, sloaneText, icon }) => (
+                  <li key={to}>
+                    <Link
                       className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline"
-                      href={href}
-                      target="_blank"
-                      rel="noreferrer"
+                      to={to}
                     >
                       {icon}
                       {sloaneText}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -36,17 +35,15 @@ export function Welcome() {
             <nav className="rounded-2xl border border-black-200 p-6">
               <p className="leading-10 text-gray-700 text-center">Clive Collection</p>
               <ul>
-                {resources.map(({ href, cliveText, icon }) => (
-                  <li key={href}>
-                    <a
+                {resources.map(({ to, cliveText, icon }) => (
+                  <li key={to}>
+                    <Link
                       className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline"
-                      href={href}
-                      target="_blank"
-                      rel="noreferrer"
+                      to={to}
                     >
                       {icon}
                       {cliveText}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -60,7 +57,7 @@ export function Welcome() {
 
 const resources = [
   {
-    href: "https://reactrouter.com/docs",
+    to: "/sloane",
     sloaneText: "Sloane Collection",
     cliveText: "Clive Collection",
     icon: (

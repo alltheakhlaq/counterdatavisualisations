@@ -13,15 +13,29 @@ type Pages = {
   "/": {
     params: {};
   };
+  "/sloane": {
+    params: {};
+  };
+  "/clive": {
+    params: {};
+  };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/";
+    page: "/" | "/sloane" | "/clive";
   };
   "routes/home.tsx": {
     id: "routes/home";
     page: "/";
+  };
+  "./sloanecol/sloanecol.tsx": {
+    id: "sloanecol/sloanecol";
+    page: "/sloane";
+  };
+  "./clivecol/clivecol.tsx": {
+    id: "clivecol/clivecol";
+    page: "/clive";
   };
 };
