@@ -11,7 +11,7 @@ export function Welcome() {
         </header>
         <div className="flex flex-row">
           {/* Sloane collection block */}
-          <div className="max-w-[500px] w-full space-y-6 px-4">
+          <div className="max-w-[500px] w-screen space-y-6 px-4">
             <nav className="rounded-2xl border border-black-200 p-6">
               <p className="leading-10 text-gray-700 text-center">Sloane Collection</p>
               <ul>
@@ -32,7 +32,7 @@ export function Welcome() {
             </nav>
           </div>
           {/* Clive collection block */}
-          <div className="max-w-[500px] w-full space-y-6 px-4">
+          <div className="max-w-[500px] w-screen space-y-6 px-4">
             <nav className="rounded-2xl border border-black-200 p-6">
               <p className="leading-10 text-gray-700 text-center">Clive Collection</p>
               <ul>
