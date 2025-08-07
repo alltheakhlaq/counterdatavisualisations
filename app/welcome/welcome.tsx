@@ -9,45 +9,47 @@ export function Welcome() {
             <img src={logo} alt="React Router" className="block w-full dark:hidden" />
           </div>
         </header>
-        <div className="max-w-[500px] w-full space-y-6 px-4">
-          <nav className="rounded-2xl border border-black-200 p-6">
-            <p className="leading-10 text-gray-700 text-center">What&apos;s next?</p>
-            <ul>
-              {resources.map(({ href, text, icon }) => (
-                <li key={href}>
-                  <a
-                    className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {icon}
-                    {text}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-        <div className="max-w-[500px] w-full space-y-6 px-4">
-          <nav className="rounded-2xl border border-black-200 p-6">
-            <p className="leading-10 text-gray-700 text-center">What&apos;s next?</p>
-            <ul>
-              {resources.map(({ href, text, icon }) => (
-                <li key={href}>
-                  <a
-                    className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {icon}
-                    {text}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+        <div className="flex flex-row">
+          <div className="max-w-[500px] w-full space-y-6 px-4">
+            <nav className="rounded-2xl border border-black-200 p-6">
+              <p className="leading-10 text-gray-700 text-center">What&apos;s next?</p>
+              <ul>
+                {resources.map(({ href, text, icon }) => (
+                  <li key={href}>
+                    <a
+                      className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline"
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {icon}
+                      {text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+          <div className="max-w-[500px] w-full space-y-6 px-4">
+            <nav className="rounded-2xl border border-black-200 p-6">
+              <p className="leading-10 text-gray-700 text-center">What&apos;s next?</p>
+              <ul>
+                {resources.map(({ href, text, icon }) => (
+                  <li key={href}>
+                    <a
+                      className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline"
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {icon}
+                      {text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </main>
