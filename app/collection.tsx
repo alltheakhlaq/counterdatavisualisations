@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactElement } from "react";
 
 const CounterdataTypes = {
   identify: "Identify",
@@ -14,84 +14,90 @@ const initialState = Object.fromEntries(
 export type CollectionObject = {
   name: string;
   src: string;
-  identify: string;
-  makeVisible: string;
-  challenge: string;
-  resist: string;
+  identify: ReactElement | string;
+  makeVisible: ReactElement | string;
+  challenge: ReactElement | string;
+  resist: ReactElement | string;
 };
 
 type CollectionProps = {
   title: string;
+  mainImageSrc: string;
   description: string;
   collectionItems: CollectionObject[];
 };
 
-export default function ({ title, description, collectionItems }: CollectionProps) {
+export default function ({ title, mainImageSrc, description, collectionItems }: CollectionProps) {
   const [selectedCounterdata, setSelectedCounterdata] = useState(initialState);
   const [selectedObjectIndex, setSelectedObjectIndex] = useState<number | null>(null);
   const counterdataIsSelected = Object.values(selectedCounterdata).some(
     (counterdataSelected) => counterdataSelected === true
   );
+  const objectIsSelected = selectedObjectIndex !== null;
 
   return (
     <div>
-      <div className="flex">
-        <span>Main image</span>
-        {Object.values(CounterdataTypes).map((counterdata) => (
-          <div key={counterdata}>
-            <input
-              type="checkbox"
-              id={counterdata}
-              name={counterdata}
-              checked={selectedCounterdata[counterdata]}
-              onChange={() => {
-                const newCounterdata = {
-                  ...selectedCounterdata,
-                  [counterdata]: !selectedCounterdata[counterdata],
-                };
-                setSelectedCounterdata(newCounterdata);
-                if (Object.values(newCounterdata).every((val) => val === false)) {
-                  setSelectedObjectIndex(null);
-                }
-              }}
-            />
-            <label htmlFor={counterdata}> {counterdata}</label>
-          </div>
-        ))}
+      <div className="flex items-center justify-around pt-16 pb-16">
+        <img src={mainImageSrc} style={{ width: "300px" }} />
+        <div>
+          {Object.values(CounterdataTypes).map((counterdata) => (
+            <div key={counterdata}>
+              <input
+                type="checkbox"
+                id={counterdata}
+                name={counterdata}
+                checked={selectedCounterdata[counterdata]}
+                onChange={() => {
+                  const newCounterdata = {
+                    ...selectedCounterdata,
+                    [counterdata]: !selectedCounterdata[counterdata],
+                  };
+                  setSelectedCounterdata(newCounterdata);
+                  if (Object.values(newCounterdata).every((val) => val === false)) {
+                    setSelectedObjectIndex(null);
+                  }
+                }}
+              />
+              <label htmlFor={counterdata}> {counterdata}</label>
+            </div>
+          ))}
+        </div>
       </div>
       <div>
-        <p>{title}</p>
-        <p>{description}</p>
+        <h1>{title}</h1>
+        {!objectIsSelected ? <p>{description}</p> : null}
       </div>
       {counterdataIsSelected && selectedObjectIndex === null ? (
-        <div>
-          <div>Here's where the collection goes</div>
+        <div className="pt-10">
           {collectionItems.map((item, index) => (
-            <img
-              src={item.src}
-              aria-label={item.name}
-              onClick={() => setSelectedObjectIndex(index)}
-              width={400}
-            />
+            <div>
+              <p>{item.name}</p>
+              <img
+                src={item.src}
+                aria-label={item.name}
+                onClick={() => setSelectedObjectIndex(index)}
+                style={{ width: "200px" }}
+              />
+            </div>
           ))}
         </div>
       ) : null}
-      {selectedObjectIndex !== null ? (
+      {objectIsSelected ? (
         <div>
-          <button type="button" onClick={() => setSelectedObjectIndex(null)}>
+          <button className="pt-10" type="button" onClick={() => setSelectedObjectIndex(null)}>
             Back to collection
           </button>
           {selectedCounterdata[CounterdataTypes.identify] && (
-            <div>{collectionItems[selectedObjectIndex].identify}</div>
+            <div className="pt-10">{collectionItems[selectedObjectIndex].identify}</div>
           )}
           {selectedCounterdata[CounterdataTypes.makeVisible] && (
-            <div>{collectionItems[selectedObjectIndex].makeVisible}</div>
+            <div className="pt-10">{collectionItems[selectedObjectIndex].makeVisible}</div>
           )}
           {selectedCounterdata[CounterdataTypes.challenge] && (
-            <div>{collectionItems[selectedObjectIndex].challenge}</div>
+            <div className="pt-10">{collectionItems[selectedObjectIndex].challenge}</div>
           )}
           {selectedCounterdata[CounterdataTypes.resist] && (
-            <div>{collectionItems[selectedObjectIndex].resist}</div>
+            <div className="pt-10">{collectionItems[selectedObjectIndex].resist}</div>
           )}
         </div>
       ) : null}
