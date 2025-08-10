@@ -19,8 +19,9 @@ type CollectionProps = {
 
 export default function ({ title, description, collectionItems }: CollectionProps) {
   const [selectedCounterdata, setSelectedCounterdata] = useState(initialState);
-  const noCounterdataSelected = Object.values(selectedCounterdata).every(
-    (counterdataSelected) => counterdataSelected === false
+  const [selectedObjectIndex, setSelectedObjectIndex] = useState<number | null>(null);
+  const counterdataIsSelected = Object.values(selectedCounterdata).some(
+    (counterdataSelected) => counterdataSelected === true
   );
 
   return (
@@ -49,21 +50,28 @@ export default function ({ title, description, collectionItems }: CollectionProp
         <p>{title}</p>
         <p>{description}</p>
       </div>
-      <div>
-        Selected counterdatas:{" "}
-        {noCounterdataSelected
-          ? "None selected"
-          : Object.entries(selectedCounterdata)
-              .filter(([__label, isChecked]) => isChecked)
-              .map(([label, __isChecked]) => label)
-              .join(", ")}
-      </div>
-      {!noCounterdataSelected ? (
+      {counterdataIsSelected && selectedObjectIndex === null ? (
         <div>
           <div>Here's where the collection goes</div>
-          {collectionItems.map((item) => (
-            <img src={item.src} aria-label={item.name} />
+          {collectionItems.map((item, index) => (
+            <img
+              src={item.src}
+              aria-label={item.name}
+              onClick={() => setSelectedObjectIndex(index)}
+              width={400}
+            />
           ))}
+        </div>
+      ) : null}
+      {selectedObjectIndex !== null ? (
+        <div>
+          <button type="button" onClick={() => setSelectedObjectIndex(null)}>
+            Back to collection
+          </button>
+          {selectedCounterdata[CounterdataTypes.identify] && <div>Identify information</div>}
+          {selectedCounterdata[CounterdataTypes.makeVisible] && <div>Make visible information</div>}
+          {selectedCounterdata[CounterdataTypes.challenge] && <div>Challenge information</div>}
+          {selectedCounterdata[CounterdataTypes.resist] && <div>Resist information</div>}
         </div>
       ) : null}
     </div>
