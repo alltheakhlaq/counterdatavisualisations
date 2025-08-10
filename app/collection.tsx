@@ -11,10 +11,19 @@ const initialState = Object.fromEntries(
   Object.values(CounterdataTypes).map((counterdata) => [counterdata, false])
 );
 
+export type CollectionObject = {
+  name: string;
+  src: string;
+  identify: string;
+  makeVisible: string;
+  challenge: string;
+  resist: string;
+};
+
 type CollectionProps = {
   title: string;
   description: string;
-  collectionItems: { name: string; src: string }[];
+  collectionItems: CollectionObject[];
 };
 
 export default function ({ title, description, collectionItems }: CollectionProps) {
@@ -35,12 +44,16 @@ export default function ({ title, description, collectionItems }: CollectionProp
               id={counterdata}
               name={counterdata}
               checked={selectedCounterdata[counterdata]}
-              onChange={() =>
-                setSelectedCounterdata({
+              onChange={() => {
+                const newCounterdata = {
                   ...selectedCounterdata,
                   [counterdata]: !selectedCounterdata[counterdata],
-                })
-              }
+                };
+                setSelectedCounterdata(newCounterdata);
+                if (Object.values(newCounterdata).every((val) => val === false)) {
+                  setSelectedObjectIndex(null);
+                }
+              }}
             />
             <label htmlFor={counterdata}> {counterdata}</label>
           </div>
@@ -68,10 +81,18 @@ export default function ({ title, description, collectionItems }: CollectionProp
           <button type="button" onClick={() => setSelectedObjectIndex(null)}>
             Back to collection
           </button>
-          {selectedCounterdata[CounterdataTypes.identify] && <div>Identify information</div>}
-          {selectedCounterdata[CounterdataTypes.makeVisible] && <div>Make visible information</div>}
-          {selectedCounterdata[CounterdataTypes.challenge] && <div>Challenge information</div>}
-          {selectedCounterdata[CounterdataTypes.resist] && <div>Resist information</div>}
+          {selectedCounterdata[CounterdataTypes.identify] && (
+            <div>{collectionItems[selectedObjectIndex].identify}</div>
+          )}
+          {selectedCounterdata[CounterdataTypes.makeVisible] && (
+            <div>{collectionItems[selectedObjectIndex].makeVisible}</div>
+          )}
+          {selectedCounterdata[CounterdataTypes.challenge] && (
+            <div>{collectionItems[selectedObjectIndex].challenge}</div>
+          )}
+          {selectedCounterdata[CounterdataTypes.resist] && (
+            <div>{collectionItems[selectedObjectIndex].resist}</div>
+          )}
         </div>
       ) : null}
     </div>
