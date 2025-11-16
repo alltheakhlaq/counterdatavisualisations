@@ -1,4 +1,6 @@
 import { useState, type ReactElement } from "react";
+import logo from "./welcome/logo.png";
+import { NavLink } from "react-router";
 
 const CounterdataTypes = {
   identify: "Identify",
@@ -27,6 +29,24 @@ type CollectionProps = {
   collectionItems: CollectionObject[];
 };
 
+type DescriptionProps = {
+  description: string;
+  objectIsSelected: boolean;
+  counterdataIsSelected: boolean;
+};
+
+function Description({ description, objectIsSelected, counterdataIsSelected }: DescriptionProps) {
+  if (!objectIsSelected) {
+    if (counterdataIsSelected) {
+      return <p>{description.slice(0, 100)}...</p>;
+    } else {
+      return <p>{description}</p>;
+    }
+  } else {
+    return null;
+  }
+}
+
 export default function ({ title, mainImageSrc, description, collectionItems }: CollectionProps) {
   const [selectedCounterdata, setSelectedCounterdata] = useState(initialState);
   const [selectedObjectIndex, setSelectedObjectIndex] = useState<number | null>(null);
@@ -37,8 +57,11 @@ export default function ({ title, mainImageSrc, description, collectionItems }: 
 
   return (
     <div>
+      <NavLink to="/">
+        <img className="w-50" src={logo} alt="" />
+      </NavLink>
       <div className="flex items-center justify-around pt-16 pb-16">
-        <img src={mainImageSrc} style={{ width: "300px" }} />
+        <img className="w-100" src={mainImageSrc} />
         <div>
           {Object.values(CounterdataTypes).map((counterdata) => (
             <div key={counterdata}>
@@ -65,7 +88,11 @@ export default function ({ title, mainImageSrc, description, collectionItems }: 
       </div>
       <div>
         <h1>{title}</h1>
-        {!objectIsSelected ? <p>{description}</p> : null}
+        <Description
+          description={description}
+          objectIsSelected={objectIsSelected}
+          counterdataIsSelected={counterdataIsSelected}
+        />
       </div>
       {counterdataIsSelected && selectedObjectIndex === null ? (
         <div className="pt-10">

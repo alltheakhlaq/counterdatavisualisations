@@ -39,8 +39,13 @@ export function Welcome() {
 const resources = [
   {
     to: "/sloane",
-    text: "Sloane Collection",
-    bodyText: "Sloane is a lovely British man",
+    text: (
+      <div>
+        {" "}
+        <h1>Sloane Collection </h1>{" "}
+      </div>
+    ),
+    bodyText: "Click below to view Sloane collection",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -60,8 +65,13 @@ const resources = [
   },
   {
     to: "/clive",
-    text: "Clive Collection",
-    bodyText: "Clive is a horrid British man",
+    text: (
+      <div>
+        {" "}
+        <h1>Clive Collection </h1>{" "}
+      </div>
+    ),
+    bodyText: "Click below to view Clive collection",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
