@@ -5,7 +5,8 @@ import { NavLink } from "react-router";
 const CounterdataTypes = {
   identify: "Identify",
   makeVisible: "Make visible",
-  challenge: "Challenge",
+  // no challenge for now
+  // challenge: "Challenge",
   resist: "Resist",
 };
 
@@ -16,6 +17,7 @@ const initialState = Object.fromEntries(
 export type CollectionObject = {
   name: string;
   src: string;
+  dataFields: { [key: string]: string };
   identify: ReactElement | string;
   makeVisible: ReactElement | string;
   challenge: ReactElement | string;
@@ -114,15 +116,35 @@ export default function ({ title, mainImageSrc, description, collectionItems }: 
           <button className="pt-10" type="button" onClick={() => setSelectedObjectIndex(null)}>
             Back to collection
           </button>
+          <div className="flex">
+            <div className="flex-1">
+              <img src={collectionItems[selectedObjectIndex].src} />
+            </div>
+            <div className="flex-1">
+              <dl>
+                {Object.entries(collectionItems[selectedObjectIndex].dataFields).map(
+                  ([fieldName, fieldValue]) => (
+                    <>
+                      <dt>
+                        <strong>{fieldName}</strong>
+                      </dt>
+                      <dd className="mb-4">{fieldValue}</dd>
+                    </>
+                  )
+                )}
+              </dl>
+            </div>
+          </div>
           {selectedCounterdata[CounterdataTypes.identify] && (
             <div className="pt-10">{collectionItems[selectedObjectIndex].identify}</div>
           )}
           {selectedCounterdata[CounterdataTypes.makeVisible] && (
             <div className="pt-10">{collectionItems[selectedObjectIndex].makeVisible}</div>
           )}
-          {selectedCounterdata[CounterdataTypes.challenge] && (
+          {/* No challenge for now */}
+          {/* {selectedCounterdata[CounterdataTypes.challenge] && (
             <div className="pt-10">{collectionItems[selectedObjectIndex].challenge}</div>
-          )}
+          )} */}
           {selectedCounterdata[CounterdataTypes.resist] && (
             <div className="pt-10">{collectionItems[selectedObjectIndex].resist}</div>
           )}

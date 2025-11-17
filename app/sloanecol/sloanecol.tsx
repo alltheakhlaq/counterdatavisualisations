@@ -8,6 +8,10 @@ const SloaneCollectionObjects: CollectionObject[] = [
   {
     name: "Objects displaying enslaved people",
     src: imageenslavedpeople,
+    dataFields: {
+      "Power dimensions": "a few words with link to wider MoD",
+      "Instances of resistance": "a few words with link to wider MoD",
+    },
     identify: (
       <div>
         <p>Currently available on British Museum online collection</p>
@@ -96,7 +100,8 @@ const SloaneCollectionObjects: CollectionObject[] = [
   },
   {
     name: "Object",
-    src: imageenslavedpeople,
+    src: greybackground,
+    dataFields: { "Field 1": "value 1", "Collected at": "24 Jan 1880" },
     identify: (
       <div>
         <p>Currently available on British Museum online collection</p>
