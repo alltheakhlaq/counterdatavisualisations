@@ -104,6 +104,11 @@ const SloaneCollectionObjects: CollectionObject[] = [
     name: "Miscellanies Entry 1796",
     src: greybackground,
     dataFields: {
+      "Object Name:": {
+        fieldValue:
+          "Miscellanies Entry 1796: ‘A bullet used by the runaway negros in Jamaica made of the pewter dishes & lead in a thimble When there is too much tinn they break in pieces on being shott. M r . Barham.’",
+        contextTag: "object",
+      },
       "Condition:": {
         fieldValue:
           "(Information on the preservation or deterioration of objects under institutional hold)",
@@ -130,10 +135,26 @@ const SloaneCollectionObjects: CollectionObject[] = [
         fieldValue: "(related information)",
         contextTag: "",
       },
-      "Historical Power Dimension:": {
-        fieldValue: "Colonial domination: Medical practices which enslaved people were subjeted to",
-        contextTag: "medical practices",
-      },
+      "Historical Power Dimension:": [
+        {
+          fieldValue:
+            "Colonial domination: Medical practices which enslaved people were subjeted to",
+          contextTag: "medical practices",
+        },
+        {
+          fieldValue: "Resistance: Colonial anxeity: Instilling fear in the heart of the enslavers",
+          contextTag: "colonial anxiety",
+        },
+        {
+          fieldValue: "Domination: Banning of musical instruments for fear of revolt",
+          contextTag: "banning music",
+        },
+        {
+          fieldValue:
+            "Resistance: Primary resistance/Breaking resistance - direct physical attacks on enslavers or those perceived as colonisers",
+          contextTag: "direct attack",
+        },
+      ],
       "Contemporary Power Dimension:": {
         fieldValue: "(related information)",
         contextTag: "",
@@ -231,7 +252,7 @@ const SloaneCollectionObjects: CollectionObject[] = [
 export default function () {
   return (
     <Collection
-      title="Sloane collection"
+      title="Objects from Sloane collection"
       mainImageSrc={sloane}
       description="The British museum opened its doors to the public on Monday 15 January 1759. Forming this monumental colonial institution's earliest collection were cultural and natural ‘curiosities’ accumulated by Sir Hans Sloane’s over the course of his longevous life. The collection of Sir Hans Sloane that he spent his long life collecting, were bought by the British Parliament the year he died, and were displayed to the public eye at the behest of Sloane’s will. It was instrumental to the creation of the British Museum. Sloane’s collection later on was divided among other British institutions that housed colonial collections such as the British Library and Natural History Museum in London. To this day, Sloane’s collection holds testimonies to various features of the British as well as global cultural, social and political environments.
 Sloane’s collection is composed of thousands of preserved plants and other natural material, preserved animal bodies, photographic material, correspondences, and 54 handwritten catalogues documenting almost the entirety of the object he amassed. There is a huge diversity in objects that Sloane accumulated as there was no pattern to his collection practice. He devised a  categorisation system for his object which are as follows: The Library, Medals and Coins,  Antiquities, Cameos and Intaglios, Precious Stones, Agates and Jaspers, Agate and Jasper Vessels, Crystals and Spars, Fossils, Flints, Other Stones, Metals, Minerals, Ores, Earths, Sands, Salts, Bitumens, Sulphurs, Ambers, Talcs and Micae, Testacea and Shells, Corals and Sponges, Echini Marini (sea urchins), Asteriae, Trochi, Entrochi (shells), Crustacea or Crabs, Starfish, Fish, Birds, Eggs, Nests, Vipers and Serpents, Quadrupeds, Insects, Humana, Vegetable Substances, Herbarium Volumes, Miscellaneous Things, Framed Pictures and Drawings, and Mathematical Instruments (Delborough, 2017).

@@ -13,6 +13,7 @@ export default (
     practise of resisting, the fact that there is even an attempt at subjugation and disruption of
     colonial power in itself constitutes as success, even if the ultimate destination of complete
     tarnish is not reached. 
+    <br />
     <mark data-context-tag="object" style={{ background: "#FFB8EBA6" }}>
       Object:{" "}
     </mark>
@@ -25,6 +26,7 @@ export default (
     a wider network of slave resistances and anti-colonial struggles. It could illustrate the deep
     roots that resistance to slavery has, and how its always been an intrinsic part of history of
     transatlantic slave trade. 
+    <br />
     <mark data-context-tag="medical practices" style={{ background: "#FF5582A6" }}>
       Colonial domination: Medical practices which enslaved people were subjeted to
     </mark>
@@ -43,6 +45,7 @@ export default (
     ‘non-violent’ side of the slavery which on face value presents a persona which appeal to the
     moral values of Western ideologies but is inflicting horrid harm to Black and indigenous
     population in the colony. 
+    <br />
     <mark data-context-tag="colonial anxiety" style={{ background: "ABF7F7A6" }}>
       Resistance: Colonial anxeity: Instilling fear in the heart of the enslavers
     </mark>{" "}
@@ -60,6 +63,7 @@ export default (
     enslavement or having escaped it. Although from a colonial gaze, Sloane’s writing points to the
     frequency of its occurrence in the colonies, and the dread it instilled in the hearts of the
     whites.
+    <br />
     <mark data-context-tag="direct attack" style={{ background: "ABF7F7A6" }}>
       Resistance: Primary resistance/Breaking resistance - direct physical attacks on enslavers or
       those perceived as colonisers

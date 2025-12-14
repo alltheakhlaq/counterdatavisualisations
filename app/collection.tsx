@@ -20,6 +20,7 @@ type DataField = {
 };
 
 type DataFields = {
+  "Object Name:": DataField;
   "Condition:": DataField;
   "Access to the digital material:": DataField;
   "Access to the physical object:": DataField;
@@ -27,7 +28,7 @@ type DataFields = {
   "Method of acquisition:": DataField;
   "Biographical history of holder (collector):": DataField;
   "Current holding institution:": DataField;
-  "Historical Power Dimension:": DataField;
+  "Historical Power Dimension:": DataField[];
   "Contemporary Power Dimension:": DataField;
 };
 
@@ -138,28 +139,33 @@ export default function ({ title, mainImageSrc, description, collectionItems }: 
             <div className="flex-1">
               <img src={collectionItems[selectedObjectIndex].src} />
             </div>
-            <div className="flex-1">
+            <div className="flex-1 mr-8 max-h-[700px] overflow-y-scroll">
               <dl>
                 {Object.entries(collectionItems[selectedObjectIndex].dataFields).map(
-                  ([fieldName, { fieldValue, contextTag }]) => (
-                    <>
-                      <dt>
-                        <strong>{fieldName}</strong>
-                      </dt>
-                      <dd
-                        className="mb-4"
-                        onClick={() => {
-                          const context = document.querySelector(
-                            `[data-context-tag="${contextTag}"]`
-                          );
-                          context?.scrollIntoView({ behavior: "smooth" });
-                        }}
-                        style={contextTag ? { cursor: "pointer" } : undefined}
-                      >
-                        {fieldValue}
-                      </dd>
-                    </>
-                  )
+                  ([fieldName, fieldInfo]) => {
+                    const fieldValues = Array.isArray(fieldInfo) ? fieldInfo : [fieldInfo];
+                    return (
+                      <>
+                        <dt>
+                          <strong>{fieldName}</strong>
+                        </dt>
+                        {fieldValues.map(({ fieldValue, contextTag }) => (
+                          <dd
+                            className="mb-4"
+                            onClick={() => {
+                              const context = document.querySelector(
+                                `[data-context-tag="${contextTag}"]`
+                              );
+                              context?.scrollIntoView({ behavior: "smooth" });
+                            }}
+                            style={contextTag ? { cursor: "pointer" } : undefined}
+                          >
+                            {fieldValue}
+                          </dd>
+                        ))}
+                      </>
+                    );
+                  }
                 )}
               </dl>
             </div>
