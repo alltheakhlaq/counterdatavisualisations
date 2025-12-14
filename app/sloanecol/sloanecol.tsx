@@ -132,7 +132,7 @@ const SloaneCollectionObjects: CollectionObject[] = [
       },
       "Historical Power Dimension:": {
         fieldValue: "Colonial domination: Medical practices which enslaved people were subjeted to",
-        contextTag: "",
+        contextTag: "medical practices",
       },
       "Contemporary Power Dimension:": {
         fieldValue: "(related information)",

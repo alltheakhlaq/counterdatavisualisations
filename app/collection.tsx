@@ -134,7 +134,7 @@ export default function ({ title, mainImageSrc, description, collectionItems }: 
           <button className="pt-10" type="button" onClick={() => setSelectedObjectIndex(null)}>
             Back to collection
           </button>
-          <div className="flex">
+          <div className="flex mb-20">
             <div className="flex-1">
               <img src={collectionItems[selectedObjectIndex].src} />
             </div>
@@ -146,11 +146,25 @@ export default function ({ title, mainImageSrc, description, collectionItems }: 
                       <dt>
                         <strong>{fieldName}</strong>
                       </dt>
-                      <dd className="mb-4">{fieldValue}</dd>
+                      <dd
+                        className="mb-4"
+                        onClick={() => {
+                          const context = document.querySelector(
+                            `[data-context-tag="${contextTag}"]`
+                          );
+                          context?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                        style={contextTag ? { cursor: "pointer" } : undefined}
+                      >
+                        {fieldValue}
+                      </dd>
                     </>
                   )
                 )}
               </dl>
+            </div>
+            <div className="flex-1 max-h-[700px] overflow-y-scroll">
+              {collectionItems[selectedObjectIndex].objectContext}
             </div>
           </div>
           {selectedCounterdata[CounterdataTypes.identify] && (
