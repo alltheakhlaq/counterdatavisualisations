@@ -1,4 +1,4 @@
-import { jsx, jsxs } from "react/jsx-runtime";
+import { jsx, jsxs, Fragment } from "react/jsx-runtime";
 import { PassThrough } from "node:stream";
 import { createReadableStreamFromReadable } from "@react-router/node";
 import { ServerRouter, UNSAFE_withComponentProps, Outlet, UNSAFE_withErrorBoundaryProps, isRouteErrorResponse, Meta, Links, ScrollRestoration, Scripts, Link, NavLink } from "react-router";
@@ -200,7 +200,8 @@ const route1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
 const CounterdataTypes = {
   identify: "Identify",
   makeVisible: "Make visible",
-  challenge: "Challenge",
+  // no challenge for now
+  // challenge: "Challenge",
   resist: "Resist"
 };
 const initialState = Object.fromEntries(
@@ -282,19 +283,32 @@ function Collection({ title, mainImageSrc, description, collectionItems }) {
     ] })) }) : null,
     objectIsSelected ? /* @__PURE__ */ jsxs("div", { children: [
       /* @__PURE__ */ jsx("button", { className: "pt-10", type: "button", onClick: () => setSelectedObjectIndex(null), children: "Back to collection" }),
+      /* @__PURE__ */ jsxs("div", { className: "flex", children: [
+        /* @__PURE__ */ jsx("div", { className: "flex-1", children: /* @__PURE__ */ jsx("img", { src: collectionItems[selectedObjectIndex].src }) }),
+        /* @__PURE__ */ jsx("div", { className: "flex-1", children: /* @__PURE__ */ jsx("dl", { children: Object.entries(collectionItems[selectedObjectIndex].dataFields).map(
+          ([fieldName, fieldValue]) => /* @__PURE__ */ jsxs(Fragment, { children: [
+            /* @__PURE__ */ jsx("dt", { children: /* @__PURE__ */ jsx("strong", { children: fieldName }) }),
+            /* @__PURE__ */ jsx("dd", { className: "mb-4", children: fieldValue })
+          ] })
+        ) }) })
+      ] }),
       selectedCounterdata[CounterdataTypes.identify] && /* @__PURE__ */ jsx("div", { className: "pt-10", children: collectionItems[selectedObjectIndex].identify }),
       selectedCounterdata[CounterdataTypes.makeVisible] && /* @__PURE__ */ jsx("div", { className: "pt-10", children: collectionItems[selectedObjectIndex].makeVisible }),
-      selectedCounterdata[CounterdataTypes.challenge] && /* @__PURE__ */ jsx("div", { className: "pt-10", children: collectionItems[selectedObjectIndex].challenge }),
       selectedCounterdata[CounterdataTypes.resist] && /* @__PURE__ */ jsx("div", { className: "pt-10", children: collectionItems[selectedObjectIndex].resist })
     ] }) : null
   ] });
 }
 const imageenslavedpeople = "/assets/Objects-displaying-enslaved-people-BlPMKPSZ.jpg";
+const greybackground = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEWxsK62TYmqAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC";
 const bmimageenslavedpeople = "/assets/bm-Objects-displaying-enslaved-people-DkfBbLkk.png";
 const sloane = "/assets/sloane-BpOhpJ_U.webp";
 const SloaneCollectionObjects = [{
   name: "Objects displaying enslaved people",
   src: imageenslavedpeople,
+  dataFields: {
+    "Power dimensions": "a few words with link to wider MoD",
+    "Instances of resistance": "a few words with link to wider MoD"
+  },
   identify: /* @__PURE__ */ jsxs("div", {
     children: [/* @__PURE__ */ jsx("p", {
       children: "Currently available on British Museum online collection"
@@ -336,7 +350,11 @@ const SloaneCollectionObjects = [{
   })
 }, {
   name: "Object",
-  src: imageenslavedpeople,
+  src: greybackground,
+  dataFields: {
+    "Field 1": "value 1",
+    "Collected at": "24 Jan 1880"
+  },
   identify: /* @__PURE__ */ jsxs("div", {
     children: [/* @__PURE__ */ jsx("p", {
       children: "Currently available on British Museum online collection"
@@ -398,7 +416,7 @@ const route3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   default: clivecol
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-BG5FqKC5.js", "imports": ["/assets/chunk-C37GKA54-wpw43ror.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-DCTzHMqE.js", "imports": ["/assets/chunk-C37GKA54-wpw43ror.js"], "css": ["/assets/root-DOqz0vc5.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home": { "id": "routes/home", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/home--JvvQvZt.js", "imports": ["/assets/chunk-C37GKA54-wpw43ror.js", "/assets/logo-ZtgOBaeW.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "sloanecol/sloanecol": { "id": "sloanecol/sloanecol", "parentId": "root", "path": "/sloane", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/sloanecol-CK_dQisn.js", "imports": ["/assets/chunk-C37GKA54-wpw43ror.js", "/assets/logo-ZtgOBaeW.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "clivecol/clivecol": { "id": "clivecol/clivecol", "parentId": "root", "path": "/clive", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/clivecol-hS81SiZe.js", "imports": ["/assets/chunk-C37GKA54-wpw43ror.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-2e16676a.js", "version": "2e16676a", "sri": void 0 };
+const serverManifest = { "entry": { "module": "/assets/entry.client-BG5FqKC5.js", "imports": ["/assets/chunk-C37GKA54-wpw43ror.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-BjCS09PP.js", "imports": ["/assets/chunk-C37GKA54-wpw43ror.js"], "css": ["/assets/root-DT4Q8Dnl.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home": { "id": "routes/home", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/home--JvvQvZt.js", "imports": ["/assets/chunk-C37GKA54-wpw43ror.js", "/assets/logo-ZtgOBaeW.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "sloanecol/sloanecol": { "id": "sloanecol/sloanecol", "parentId": "root", "path": "/sloane", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/sloanecol-qP0_2OMr.js", "imports": ["/assets/chunk-C37GKA54-wpw43ror.js", "/assets/logo-ZtgOBaeW.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "clivecol/clivecol": { "id": "clivecol/clivecol", "parentId": "root", "path": "/clive", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/clivecol-hS81SiZe.js", "imports": ["/assets/chunk-C37GKA54-wpw43ror.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-42228300.js", "version": "42228300", "sri": void 0 };
 const assetsBuildDirectory = "build/client";
 const basename = "/";
 const future = { "unstable_middleware": false, "unstable_optimizeDeps": false, "unstable_splitRouteModules": false, "unstable_subResourceIntegrity": false, "unstable_viteEnvironmentApi": false };

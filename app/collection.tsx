@@ -14,10 +14,28 @@ const initialState = Object.fromEntries(
   Object.values(CounterdataTypes).map((counterdata) => [counterdata, false])
 );
 
+type DataField = {
+  fieldValue: string;
+  contextTag: string;
+};
+
+type DataFields = {
+  "Condition:": DataField;
+  "Access to the digital material:": DataField;
+  "Access to the physical object:": DataField;
+  "Cultural significance for the source community:": DataField;
+  "Method of acquisition:": DataField;
+  "Biographical history of holder (collector):": DataField;
+  "Current holding institution:": DataField;
+  "Historical Power Dimension:": DataField;
+  "Contemporary Power Dimension:": DataField;
+};
+
 export type CollectionObject = {
   name: string;
   src: string;
-  dataFields: { [key: string]: string };
+  dataFields: DataFields;
+  objectContext: ReactElement | null;
   identify: ReactElement | string;
   makeVisible: ReactElement | string;
   challenge: ReactElement | string;
@@ -63,7 +81,7 @@ export default function ({ title, mainImageSrc, description, collectionItems }: 
         <img className="w-50" src={logo} alt="" />
       </NavLink>
       <div className="flex items-center justify-around pt-16 pb-16">
-        <img className="w-100" src={mainImageSrc} />
+        {/* <img className="w-100" src={mainImageSrc} /> */}
         <div>
           {Object.values(CounterdataTypes).map((counterdata) => (
             <div key={counterdata}>
@@ -123,7 +141,7 @@ export default function ({ title, mainImageSrc, description, collectionItems }: 
             <div className="flex-1">
               <dl>
                 {Object.entries(collectionItems[selectedObjectIndex].dataFields).map(
-                  ([fieldName, fieldValue]) => (
+                  ([fieldName, { fieldValue, contextTag }]) => (
                     <>
                       <dt>
                         <strong>{fieldName}</strong>

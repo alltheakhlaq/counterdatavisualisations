@@ -3,6 +3,7 @@ import imageenslavedpeople from "./Objects-displaying-enslaved-people.jpg";
 import greybackground from "./greybck.png";
 import bmimageenslavedpeople from "./bm-Objects-displaying-enslaved-people.png";
 import sloane from "../sloane.webp";
+import miscEntry1796 from "./object-contexts/misc-entry-1796";
 
 const SloaneCollectionObjects: CollectionObject[] = [
   {
@@ -12,6 +13,7 @@ const SloaneCollectionObjects: CollectionObject[] = [
       "Power dimensions": "a few words with link to wider MoD",
       "Instances of resistance": "a few words with link to wider MoD",
     },
+    objectContext: null,
     identify: (
       <div>
         <p>Currently available on British Museum online collection</p>
@@ -99,9 +101,45 @@ const SloaneCollectionObjects: CollectionObject[] = [
     ),
   },
   {
-    name: "Object",
+    name: "Miscellanies Entry 1796",
     src: greybackground,
-    dataFields: { "Field 1": "value 1", "Collected at": "24 Jan 1880" },
+    dataFields: {
+      "Condition:": {
+        fieldValue:
+          "(Information on the preservation or deterioration of objects under institutional hold)",
+        contextTag: "",
+      },
+      "Access to the digital material:": {
+        fieldValue: "(Licensing information of all platforms it is available on)",
+        contextTag: "",
+      },
+      "Access to the physical object:": {
+        fieldValue: "(On public display, other ways of access)",
+        contextTag: "",
+      },
+      "Cultural significance for the source community:": {
+        fieldValue: "(related information)",
+        contextTag: "",
+      },
+      "Method of acquisition:": { fieldValue: "(related information)", contextTag: "" },
+      "Biographical history of holder (collector):": {
+        fieldValue: "(related information)",
+        contextTag: "",
+      },
+      "Current holding institution:": {
+        fieldValue: "(related information)",
+        contextTag: "",
+      },
+      "Historical Power Dimension:": {
+        fieldValue: "Colonial domination: Medical practices which enslaved people were subjeted to",
+        contextTag: "",
+      },
+      "Contemporary Power Dimension:": {
+        fieldValue: "(related information)",
+        contextTag: "",
+      },
+    },
+    objectContext: miscEntry1796,
     identify: (
       <div>
         <p>Currently available on British Museum online collection</p>
