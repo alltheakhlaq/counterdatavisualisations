@@ -1,6 +1,29 @@
 import { title } from "process";
 import logo from "./logo.png";
 import { Link } from "react-router";
+import { Nav } from "~/routes/nav";
+
+function InfoBlock({ resource }: { resource: Resource }) {
+  const { bodyText, title, to, linktext } = resource;
+  return (
+    <div className="max-w-[400px] w-screen space-y-6 px-4">
+      <nav className="bg-white rounded-2xl border border-black-200 p-6">
+        <ul>
+          <li>
+            <h2>{title}</h2>
+            <p className="pt-3">{bodyText}</p>
+            <Link
+              className="group flex items-center gap-3 self-stretch pt-3 leading-normal underline hover:decoration-amber-300"
+              to={to}
+            >
+              {linktext}
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+}
 
 export function Welcome() {
   return (
@@ -15,32 +38,27 @@ export function Welcome() {
             <p className="text-2xl">of Digital Museum Collections</p>
           </div>
         </header>
+        <Nav />
         <div className="flex flex-row">
-          {resources.map(({ to, title, linktext, bodyText }) => (
-            <div className="max-w-[400px] w-screen space-y-6 px-4">
-              <nav className="bg-white rounded-2xl border border-black-200 p-6">
-                <ul>
-                  <li key={to}>
-                    <h2>{title}</h2>
-                    <p className="pt-3">{bodyText}</p>
-                    <Link
-                      className="group flex items-center gap-3 self-stretch pt-3 leading-normal underline hover:decoration-amber-300"
-                      to={to}
-                    >
-                      {linktext}
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          ))}
+          <InfoBlock resource={resources[0]} />
+          <div className="flex flex-col">
+            <InfoBlock resource={resources[1]} />
+            <InfoBlock resource={resources[2]} />
+          </div>
         </div>
       </div>
     </main>
   );
 }
 
-const resources = [
+interface Resource {
+  to: string;
+  title: string;
+  linktext: any;
+  bodyText: string;
+}
+
+const resources: Resource[] = [
   {
     to: "",
     title: "What is counterdata visualisation?",
