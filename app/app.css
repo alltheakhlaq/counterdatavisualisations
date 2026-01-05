@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
 
+
 body {
+  background-color: #d8d2e1;
   margin-left: 100px;
   margin-right: 100px;
+  font-family: Alegreya;
+  font-style: normal;
+  font-display: swap;
 }
 
 h1 {
-  font-size: large;
+  font-size: 40px;
 }
