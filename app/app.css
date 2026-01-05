@@ -1,16 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 @import "tailwindcss";
 
 
 body {
-  background-color: #d8d2e1;
+  background-color: #de6c83;
   margin-left: 100px;
   margin-right: 100px;
-  font-family: Alegreya;
+  font-family: "Source Code Pro", monospace;
   font-style: normal;
   font-display: swap;
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 30px;
 }

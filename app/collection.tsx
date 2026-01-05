@@ -108,7 +108,7 @@ export default function ({ title, mainImageSrc, description, collectionItems }: 
         </div>
       </div>
       <div>
-        <h1>{title}</h1>
+        <h2>{title}</h2>
         <Description
           description={description}
           objectIsSelected={objectIsSelected}
