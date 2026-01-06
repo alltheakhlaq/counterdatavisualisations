@@ -8,6 +8,7 @@ function InfoBlock({ resource }: { resource: Resource }) {
   return (
     <div className="space-y-6 px-4">
       <nav className="bg-white rounded-2xl border border-black-200 p-6">
+        {/* "bg-[#f9ada0]" */}
         <ul>
           <li>
             <h2>{title}</h2>
@@ -27,8 +28,8 @@ function InfoBlock({ resource }: { resource: Resource }) {
 
 export function Welcome() {
   return (
-    <main className="flex items-center pt-16 pb-16">
-      <div className="flex-1  flex-col items-center gap-5 min-h-0">
+    <main className="flex items-center">
+      <div className="flex-1  flex-col items-center min-h-0">
         <header className="flex flex-col items-center">
           {/* <div className="w-[500px] max-w-[100vw] p-4">
             <img src={logo} alt="React Router" className="block w-full" />

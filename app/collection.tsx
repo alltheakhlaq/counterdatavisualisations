@@ -1,6 +1,7 @@
 import { useState, type ReactElement } from "react";
 import logo from "./welcome/logo.png";
 import { NavLink } from "react-router";
+import { Nav } from "~/routes/nav";
 
 const CounterdataTypes = {
   identify: "Identify",
@@ -77,10 +78,15 @@ export default function ({ title, mainImageSrc, description, collectionItems }: 
   const objectIsSelected = selectedObjectIndex !== null;
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <NavLink to="/">
-        <img className="w-50" src={logo} alt="" />
+        {/* <img className="w-50" src={logo} alt="" /> */}
+        <div className="p-5 font-bold">
+          <h1>Counterdata Visualisation</h1>
+          <p className="text-2xl">of Digital Museum Collections</p>
+        </div>
       </NavLink>
+      <Nav />
       <div className="flex items-center justify-around pt-16 pb-16">
         {/* <img className="w-100" src={mainImageSrc} /> */}
         <div>

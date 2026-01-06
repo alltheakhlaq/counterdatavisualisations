@@ -27,7 +27,7 @@ export default (
     roots that resistance to slavery has, and how its always been an intrinsic part of history of
     transatlantic slave trade. 
     <br />
-    <mark data-context-tag="medical practices" style={{ background: "#FF5582A6" }}>
+    <mark data-context-tag="medical practices" style={{ background: "ABF7F7A6" }}>
       Colonial domination: Medical practices which enslaved people were subjeted to
     </mark>
     Although Sloane’s complicity in enslaving people, and his participation in transatlantic trade
