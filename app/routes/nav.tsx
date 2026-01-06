@@ -9,12 +9,11 @@ const navItems = [
 
 export function Nav() {
   return (
-    <nav className="flex flex-row">
+    <nav className="flex flex-row justify-center m-3">
       {navItems.map((item) => (
-        <div className="border-solid border-2">
-          {/* {item.title} */}
+        <div>
           <Link
-            className="group flex items-center gap-3 self-stretch pt-3 leading-normal underline hover:decoration-amber-300"
+            className="group flex justify-center p-3 underline hover:decoration-amber-300"
             to={item.to}
           >
             {item.title}

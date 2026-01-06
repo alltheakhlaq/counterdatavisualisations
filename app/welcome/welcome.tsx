@@ -6,7 +6,7 @@ import { Nav } from "~/routes/nav";
 function InfoBlock({ resource }: { resource: Resource }) {
   const { bodyText, title, to, linktext } = resource;
   return (
-    <div className="max-w-[400px] w-screen space-y-6 px-4">
+    <div className="space-y-6 px-4">
       <nav className="bg-white rounded-2xl border border-black-200 p-6">
         <ul>
           <li>
@@ -27,9 +27,9 @@ function InfoBlock({ resource }: { resource: Resource }) {
 
 export function Welcome() {
   return (
-    <main className="flex items-center justify-center pt-16 pb-16">
+    <main className="flex items-center pt-16 pb-16">
       <div className="flex-1  flex-col items-center gap-5 min-h-0">
-        <header className="flex flex-col items-center gap-9">
+        <header className="flex flex-col items-center">
           {/* <div className="w-[500px] max-w-[100vw] p-4">
             <img src={logo} alt="React Router" className="block w-full" />
           </div> */}
@@ -39,9 +39,11 @@ export function Welcome() {
           </div>
         </header>
         <Nav />
-        <div className="flex flex-row">
-          <InfoBlock resource={resources[0]} />
-          <div className="flex flex-col">
+        <div className="flex flex-row justify-center">
+          <div className="w-2/3">
+            <InfoBlock resource={resources[0]} />
+          </div>
+          <div className="flex flex-col w-1/3">
             <InfoBlock resource={resources[1]} />
             <InfoBlock resource={resources[2]} />
           </div>
