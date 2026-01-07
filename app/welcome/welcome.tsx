@@ -6,7 +6,7 @@ import { Nav } from "~/routes/nav";
 function InfoBlock({ resource }: { resource: Resource }) {
   const { bodyText, title, to, linktext } = resource;
   return (
-    <div className="space-y-6 px-4">
+    <div className="space-y-6">
       <nav className="bg-white rounded-2xl border border-black-200 p-6">
         {/* "bg-[#f9ada0]" */}
         <ul>
@@ -34,7 +34,7 @@ export function Welcome() {
           {/* <div className="w-[500px] max-w-[100vw] p-4">
             <img src={logo} alt="React Router" className="block w-full" />
           </div> */}
-          <div className="p-5 font-bold">
+          <div className="pt-5 font-bold">
             <h1>Counterdata Visualisation</h1>
             <p className="text-2xl">of Digital Museum Collections</p>
           </div>

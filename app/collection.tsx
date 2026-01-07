@@ -81,13 +81,13 @@ export default function ({ title, mainImageSrc, description, collectionItems }: 
     <div className="flex flex-col items-center">
       <NavLink to="/">
         {/* <img className="w-50" src={logo} alt="" /> */}
-        <div className="p-5 font-bold">
+        <div className="pt-5 font-bold">
           <h1>Counterdata Visualisation</h1>
           <p className="text-2xl">of Digital Museum Collections</p>
         </div>
       </NavLink>
       <Nav />
-      <div className="flex items-center justify-around pt-16 pb-16">
+      <div className="flex items-center justify-around ">
         {/* <img className="w-100" src={mainImageSrc} /> */}
         <div>
           {Object.values(CounterdataTypes).map((counterdata) => (
@@ -114,12 +114,14 @@ export default function ({ title, mainImageSrc, description, collectionItems }: 
         </div>
       </div>
       <div>
-        <h2>{title}</h2>
-        <Description
-          description={description}
-          objectIsSelected={objectIsSelected}
-          counterdataIsSelected={counterdataIsSelected}
-        />
+        <div className="bg-white rounded-2xl border border-black-200 p-6">
+          <h2>{title}</h2>
+          <Description
+            description={description}
+            objectIsSelected={objectIsSelected}
+            counterdataIsSelected={counterdataIsSelected}
+          />
+        </div>
       </div>
       {counterdataIsSelected && selectedObjectIndex === null ? (
         <div className="pt-10">
