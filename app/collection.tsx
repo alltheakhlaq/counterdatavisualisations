@@ -54,27 +54,23 @@ type CollectionProps = {
 type DescriptionProps = {
   description: string;
   objectIsSelected: boolean;
-  counterdataIsSelected: boolean;
 };
 
-function Description({ description, objectIsSelected, counterdataIsSelected }: DescriptionProps) {
+function Description({ description, objectIsSelected }: DescriptionProps) {
   if (!objectIsSelected) {
-    if (counterdataIsSelected) {
-      return <p>{description.slice(0, 100)}...</p>;
-    } else {
-      return <p>{description}</p>;
-    }
+    return <p>{description.slice(0, 500)}...</p>;
   } else {
     return null;
   }
 }
 
 export default function ({ title, mainImageSrc, description, collectionItems }: CollectionProps) {
-  const [selectedCounterdata, setSelectedCounterdata] = useState(initialState);
+  // Code to store state for which counterdata is selected
+  // const [selectedCounterdata, setSelectedCounterdata] = useState(initialState);
+  // const counterdataIsSelected = Object.values(selectedCounterdata).some(
+  //   (counterdataSelected) => counterdataSelected === true
+  // );
   const [selectedObjectIndex, setSelectedObjectIndex] = useState<number | null>(null);
-  const counterdataIsSelected = Object.values(selectedCounterdata).some(
-    (counterdataSelected) => counterdataSelected === true
-  );
   const objectIsSelected = selectedObjectIndex !== null;
 
   return (
@@ -89,7 +85,8 @@ export default function ({ title, mainImageSrc, description, collectionItems }: 
       <Nav />
       <div className="flex items-center justify-around ">
         {/* <img className="w-100" src={mainImageSrc} /> */}
-        <div>
+        {/* Code to render counter data select inputs */}
+        {/* <div>
           {Object.values(CounterdataTypes).map((counterdata) => (
             <div key={counterdata}>
               <input
@@ -111,19 +108,15 @@ export default function ({ title, mainImageSrc, description, collectionItems }: 
               <label htmlFor={counterdata}> {counterdata}</label>
             </div>
           ))}
-        </div>
+        </div>*/}
       </div>
       <div>
         <div className="bg-white rounded-2xl border border-black-200 p-6">
           <h2>{title}</h2>
-          <Description
-            description={description}
-            objectIsSelected={objectIsSelected}
-            counterdataIsSelected={counterdataIsSelected}
-          />
+          <Description description={description} objectIsSelected={objectIsSelected} />
         </div>
       </div>
-      {counterdataIsSelected && selectedObjectIndex === null ? (
+      {selectedObjectIndex === null ? (
         <div className="pt-10">
           {collectionItems.map((item, index) => (
             <div>
@@ -181,19 +174,13 @@ export default function ({ title, mainImageSrc, description, collectionItems }: 
               {collectionItems[selectedObjectIndex].objectContext}
             </div>
           </div>
-          {selectedCounterdata[CounterdataTypes.identify] && (
-            <div className="pt-10">{collectionItems[selectedObjectIndex].identify}</div>
-          )}
-          {selectedCounterdata[CounterdataTypes.makeVisible] && (
-            <div className="pt-10">{collectionItems[selectedObjectIndex].makeVisible}</div>
-          )}
+          <div className="pt-10">{collectionItems[selectedObjectIndex].identify}</div>
+          <div className="pt-10">{collectionItems[selectedObjectIndex].makeVisible}</div>
           {/* No challenge for now */}
           {/* {selectedCounterdata[CounterdataTypes.challenge] && (
             <div className="pt-10">{collectionItems[selectedObjectIndex].challenge}</div>
           )} */}
-          {selectedCounterdata[CounterdataTypes.resist] && (
-            <div className="pt-10">{collectionItems[selectedObjectIndex].resist}</div>
-          )}
+          <div className="pt-10">{collectionItems[selectedObjectIndex].resist}</div>
         </div>
       ) : null}
     </div>
