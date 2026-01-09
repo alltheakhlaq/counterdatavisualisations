@@ -40,11 +40,11 @@ export function Welcome() {
           </div>
         </header>
         <Nav />
-        <div className="flex flex-row justify-center">
+        <div className="flex flex-row justify-center gap-3">
           <div className="w-2/3">
             <InfoBlock resource={resources[0]} />
           </div>
-          <div className="flex flex-col w-1/3">
+          <div className="flex flex-col w-1/3 gap-3">
             <InfoBlock resource={resources[1]} />
             <InfoBlock resource={resources[2]} />
           </div>

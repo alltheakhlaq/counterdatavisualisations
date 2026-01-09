@@ -58,7 +58,7 @@ type DescriptionProps = {
 
 function Description({ description, objectIsSelected }: DescriptionProps) {
   if (!objectIsSelected) {
-    return <p>{description.slice(0, 500)}...</p>;
+    return <p className="max-h-[520px] overflow-y-scroll">{description}...</p>;
   } else {
     return null;
   }
@@ -83,10 +83,10 @@ export default function ({ title, mainImageSrc, description, collectionItems }: 
         </div>
       </NavLink>
       <Nav />
-      <div className="flex items-center justify-around ">
-        {/* <img className="w-100" src={mainImageSrc} /> */}
-        {/* Code to render counter data select inputs */}
-        {/* <div>
+      {/* <div className="flex items-center justify-around "> */}
+      {/* <img className="w-100" src={mainImageSrc} /> */}
+      {/* Code to render counter data select inputs */}
+      {/* <div>
           {Object.values(CounterdataTypes).map((counterdata) => (
             <div key={counterdata}>
               <input
@@ -108,29 +108,29 @@ export default function ({ title, mainImageSrc, description, collectionItems }: 
               <label htmlFor={counterdata}> {counterdata}</label>
             </div>
           ))}
-        </div>*/}
-      </div>
-      <div>
-        <div className="bg-white rounded-2xl border border-black-200 p-6">
-          <h2>{title}</h2>
+        </div> */}
+      {/* </div> */}
+      <h2 className="w-full bg-white rounded-2xl border border-black-200 p-6">{title}</h2>
+      <div className="flex flex-row gap-3">
+        <div className="w-1/2 bg-white rounded-2xl border border-black-200 p-6">
           <Description description={description} objectIsSelected={objectIsSelected} />
         </div>
+        {selectedObjectIndex === null ? (
+          <div className="w-1/2 bg-white rounded-2xl border border-black-200 p-6 pt-10">
+            {collectionItems.map((item, index) => (
+              <div>
+                <p>{item.name}</p>
+                <img
+                  src={item.src}
+                  aria-label={item.name}
+                  onClick={() => setSelectedObjectIndex(index)}
+                  style={{ width: "200px" }}
+                />
+              </div>
+            ))}
+          </div>
+        ) : null}
       </div>
-      {selectedObjectIndex === null ? (
-        <div className="pt-10">
-          {collectionItems.map((item, index) => (
-            <div>
-              <p>{item.name}</p>
-              <img
-                src={item.src}
-                aria-label={item.name}
-                onClick={() => setSelectedObjectIndex(index)}
-                style={{ width: "200px" }}
-              />
-            </div>
-          ))}
-        </div>
-      ) : null}
       {objectIsSelected ? (
         <div>
           <button className="pt-10" type="button" onClick={() => setSelectedObjectIndex(null)}>
