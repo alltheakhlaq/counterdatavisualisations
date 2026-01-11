@@ -45,18 +45,20 @@ export type CollectionObject = {
   resist: ReactElement | string;
 };
 
-type CollectionProps = {
-  title: string;
-  mainImageSrc: string;
-  description: string;
-  collectionItems: CollectionObject[];
-};
+type CollectionProps = {};
 
-export default function ({ title, mainImageSrc, description }: CollectionProps) {
+export default function (props: CollectionProps) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const collectionItems = SloaneCollectionObjects;
   const objectIndex = parseInt(pathname.split("/").at(-1)!);
+
+  const collectionObject = collectionItems[objectIndex];
+
+  const getOnClickSection = (id: string) => () => {
+    const context = document.querySelector(`#${id}`);
+    context?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="flex flex-col items-center">
@@ -67,15 +69,34 @@ export default function ({ title, mainImageSrc, description }: CollectionProps) 
         </div>
       </NavLink>
       <Nav />
-      <div>
-        <button className="pt-10" type="button" onClick={() => navigate(-1)}>
-          Back to collection
-        </button>
-        <div className="flex mb-20">
+      <div className="flex flex-row">
+        {/* left side of page - image and title */}
+        <div className="flex flex-row flex-1">
+          {/* image, title, etc */}
           <div className="flex-1">
-            <img src={collectionItems[objectIndex].src} />
+            <div>
+              <button className="pt-10" type="button" onClick={() => navigate(-1)}>
+                Back to collection
+              </button>
+            </div>
+            <div>
+              <img src={collectionObject.src} />
+            </div>
+            <div>Title</div>
+            <div>{collectionObject.fullName}</div>
           </div>
-          <div className="flex-1 mr-8 max-h-[700px] overflow-y-scroll">
+          {/* options to scroll to counterdata */}
+          <div className="flex-0">
+            <div>Data fields</div>
+            <a onClick={getOnClickSection("label1")}>Label 1</a>
+            <a onClick={getOnClickSection("label2")}>Label 2</a>
+            <a onClick={getOnClickSection("label3")}>Label 3</a>
+          </div>
+        </div>
+        {/* right side - data fields and counterdata */}
+        <div className="flex-2 mr-8 max-h-[700px] overflow-y-scroll">
+          <section>
+            <div>Data fields</div>
             <dl>
               {Object.entries(collectionItems[objectIndex].dataFields).map(
                 ([fieldName, fieldInfo]) => {
@@ -104,18 +125,20 @@ export default function ({ title, mainImageSrc, description }: CollectionProps) 
                 }
               )}
             </dl>
-          </div>
-          <div className="flex-1 max-h-[700px] overflow-y-scroll">
-            {collectionItems[objectIndex].objectContext}
-          </div>
+          </section>
+          <section>
+            <div id="label1">Label 1</div>
+            <div>counterdata contents 1</div>
+          </section>
+          <section>
+            <div id="label2">Label 2</div>
+            <div>counterdata contents 2</div>
+          </section>
+          <section>
+            <div id="label2">Label 3</div>
+            <div>counterdata contents 3</div>
+          </section>
         </div>
-        <div className="pt-10">{collectionItems[objectIndex].identify}</div>
-        <div className="pt-10">{collectionItems[objectIndex].makeVisible}</div>
-        {/* No challenge for now */}
-        {/* {selectedCounterdata[CounterdataTypes.challenge] && (
-            <div className="pt-10">{collectionItems[objectIndex].challenge}</div>
-          )} */}
-        <div className="pt-10">{collectionItems[objectIndex].resist}</div>
       </div>
     </div>
   );

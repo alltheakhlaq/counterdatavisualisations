@@ -17,20 +17,12 @@ type DataField = {
 };
 
 type DataFields = {
-  "Object Name:": DataField;
-  "Condition:": DataField;
-  "Access to the digital material:": DataField;
-  "Access to the physical object:": DataField;
-  "Cultural significance for the source community:": DataField;
-  "Method of acquisition:": DataField;
-  "Biographical history of holder (collector):": DataField;
-  "Current holding institution:": DataField;
-  "Historical Power Dimension:": DataField[];
-  "Contemporary Power Dimension:": DataField;
+  [key: string]: DataField | DataField[];
 };
 
 export type CollectionObject = {
-  name: string;
+  shortName: string;
+  fullName: string;
   src: string;
   dataFields: DataFields;
   objectContext: ReactElement | null;
@@ -64,9 +56,9 @@ export default function ({ description, collectionItems }: CollectionProps) {
         <div className="w-1/2 bg-white rounded-2xl border border-black-200 p-6 pt-10">
           {collectionItems.map((item, index) => (
             <div>
-              <p>{item.name}</p>
+              <p>{item.shortName}</p>
               <NavLink to={`${index}`}>
-                <img src={item.src} aria-label={item.name} style={{ width: "200px" }} />
+                <img src={item.src} aria-label={item.shortName} style={{ width: "200px" }} />
               </NavLink>
             </div>
           ))}

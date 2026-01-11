@@ -7,11 +7,15 @@ import miscEntry1796 from "./object-contexts/misc-entry-1796";
 
 export const SloaneCollectionObjects: CollectionObject[] = [
   {
-    name: "Objects displaying enslaved people",
+    shortName: "Objects displaying enslaved people",
+    fullName: "full name TODO",
     src: imageenslavedpeople,
     dataFields: {
-      "Power dimensions": "a few words with link to wider MoD",
-      "Instances of resistance": "a few words with link to wider MoD",
+      "Power dimensions": { fieldValue: "a few words with link to wider MoD", contextTag: "TODO" },
+      "Instances of resistance": {
+        fieldValue: "a few words with link to wider MoD",
+        contextTag: "TODO",
+      },
     },
     objectContext: null,
     identify: (
@@ -101,14 +105,11 @@ export const SloaneCollectionObjects: CollectionObject[] = [
     ),
   },
   {
-    name: "Miscellanies Entry 1796",
+    shortName: "Miscellanies Entry 1796",
+    fullName:
+      "Miscellanies Entry 1796: ‘A bullet used by the runaway negros in Jamaica made of the pewter dishes & lead in a thimble When there is too much tinn they break in pieces on being shott. M r . Barham.’",
     src: greybackground,
     dataFields: {
-      "Object Name:": {
-        fieldValue:
-          "Miscellanies Entry 1796: ‘A bullet used by the runaway negros in Jamaica made of the pewter dishes & lead in a thimble When there is too much tinn they break in pieces on being shott. M r . Barham.’",
-        contextTag: "object",
-      },
       "Condition:": {
         fieldValue:
           "(Information on the preservation or deterioration of objects under institutional hold)",
