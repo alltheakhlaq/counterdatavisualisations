@@ -16,6 +16,14 @@ type Pages = {
   "/sloane": {
     params: {};
   };
+  "/sloane-new": {
+    params: {};
+  };
+  "/sloane-new/:objectIndex": {
+    params: {
+      "objectIndex": string;
+    };
+  };
   "/clive": {
     params: {};
   };
@@ -24,7 +32,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/sloane" | "/clive";
+    page: "/" | "/sloane" | "/sloane-new" | "/sloane-new/:objectIndex" | "/clive";
   };
   "routes/home.tsx": {
     id: "routes/home";
@@ -33,6 +41,14 @@ type RouteFiles = {
   "./sloanecol/sloanecol.tsx": {
     id: "sloanecol/sloanecol";
     page: "/sloane";
+  };
+  "./sloanecol/sloanecol-new.tsx": {
+    id: "sloanecol/sloanecol-new";
+    page: "/sloane-new";
+  };
+  "./object-page.tsx": {
+    id: "object-page";
+    page: "/sloane-new/:objectIndex";
   };
   "./clivecol/clivecol.tsx": {
     id: "clivecol/clivecol";
