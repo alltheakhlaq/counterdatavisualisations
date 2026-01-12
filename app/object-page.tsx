@@ -69,34 +69,44 @@ export default function (props: CollectionProps) {
         </div>
       </NavLink>
       <Nav />
-      <div className="flex flex-row">
+      <div className="flex flex-row w-full">
         {/* left side of page - image and title */}
         <div className="flex flex-row flex-1">
           {/* image, title, etc */}
           <div className="flex-1">
             <div>
-              <button className="pt-10" type="button" onClick={() => navigate(-1)}>
+              <button className="pb-10" type="button" onClick={() => navigate(-1)}>
                 Back to collection
               </button>
             </div>
             <div>
               <img src={collectionObject.src} />
             </div>
-            <div>Title</div>
-            <div>{collectionObject.fullName}</div>
+            <div className="pt-3 pb-3">Object title:</div>
+            <div className="">{collectionObject.fullName}</div>
           </div>
           {/* options to scroll to counterdata */}
-          <div className="flex-0">
-            <div>Data fields</div>
-            <a onClick={getOnClickSection("label1")}>Label 1</a>
-            <a onClick={getOnClickSection("label2")}>Label 2</a>
-            <a onClick={getOnClickSection("label3")}>Label 3</a>
+          <div className="flex-0 pr-5 pl-3 cursor-pointer mt-16">
+            <div className="mb-6 gap-50">
+              <div className="rounded-full bg-[#6369d1] size-5"></div>
+              <a onClick={getOnClickSection("label1")}>Data fields </a>
+            </div>
+            <div className="mb-6">
+              <div className="rounded-full bg-[#ffcf56] size-5"></div>
+              <a onClick={getOnClickSection("label2")}>Matrix of Domination </a>
+            </div>
+            <div>
+              <div className="rounded-full bg-[#2ebfa5] size-5"></div>
+              <a onClick={getOnClickSection("label3")}>Current availability</a>
+            </div>
           </div>
         </div>
         {/* right side - data fields and counterdata */}
-        <div className="flex-2 mr-8 max-h-[700px] overflow-y-scroll">
-          <section>
-            <div>Data fields</div>
+        <div className="flex-2 mr-8 max-h-[700px] overflow-y-scroll ">
+          <section className="bg-white rounded-2xl border-8 border-[#6369d1] p-6">
+            <div id="label1">
+              <h2>Data fields</h2>{" "}
+            </div>
             <dl>
               {Object.entries(collectionItems[objectIndex].dataFields).map(
                 ([fieldName, fieldInfo]) => {
@@ -126,16 +136,19 @@ export default function (props: CollectionProps) {
               )}
             </dl>
           </section>
-          <section>
-            <div id="label1">Label 1</div>
-            <div>counterdata contents 1</div>
+          <section className="bg-white rounded-2xl border-8 border-[#ffcf56] p-6">
+            <div id="label2">
+              <h2>Matrix of Domination</h2>
+            </div>
+            <div>Structural Domain</div>
+            <div>Disciplinary Domain</div>
+            <div>Hegemonic Domain</div>
+            <div>Interpersonal Domain</div>
           </section>
-          <section>
-            <div id="label2">Label 2</div>
-            <div>counterdata contents 2</div>
-          </section>
-          <section>
-            <div id="label2">Label 3</div>
+          <section className="bg-white rounded-2xl border-8 border-[#2ebfa5] p-6">
+            <div id="label3">
+              <h2>Current digital availability</h2>
+            </div>
             <div>counterdata contents 3</div>
           </section>
         </div>
