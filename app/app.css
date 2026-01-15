@@ -6,9 +6,11 @@ body {
   background-color: #de6c83;
   margin-left: 200px;
   margin-right: 200px;
+  margin-bottom: 150px;
   font-family: "Source Code Pro", monospace;
   font-style: normal;
   font-display: swap;
+
 }
 
 h1 {

@@ -86,14 +86,14 @@ export default function (props: CollectionProps) {
             <div className="">{collectionObject.fullName}</div>
           </div>
           {/* options to scroll to counterdata */}
-          <div className="flex-0 pr-5 pl-3 cursor-pointer mt-16">
+          <div className="flex-0 pr-5 pl-3 cursor-pointer mt-16 ">
             <div className="mb-6 gap-50">
-              <div className="rounded-full bg-[#6369d1] size-5"></div>
+              <div className="rounded-full bg-[#6369d1] size-5 justify-center"></div>
               <a onClick={getOnClickSection("label1")}>Data fields </a>
             </div>
             <div className="mb-6">
               <div className="rounded-full bg-[#ffcf56] size-5"></div>
-              <a onClick={getOnClickSection("label2")}>Matrix of Domination </a>
+              <a onClick={getOnClickSection("label2")}>Power dimensions </a>
             </div>
             <div>
               <div className="rounded-full bg-[#2ebfa5] size-5"></div>
@@ -138,8 +138,13 @@ export default function (props: CollectionProps) {
           </section>
           <section className="bg-white rounded-2xl border-8 border-[#ffcf56] p-6">
             <div id="label2">
-              <h2>Matrix of Domination</h2>
+              <h2>Power Dimensions</h2>
             </div>
+            <div className="font-bold">Historical Power Dimensions</div>
+            <div>Forms of domination that could be inspected through the object:</div>
+            <div>Forms of resistance that could be inspected through the object:</div>
+            <br />
+            <div className="font-bold">Contemporary Power Dimensions</div>
             <div>Structural Domain</div>
             <div>Disciplinary Domain</div>
             <div>Hegemonic Domain</div>
