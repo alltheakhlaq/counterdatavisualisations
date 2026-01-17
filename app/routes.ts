@@ -6,4 +6,5 @@ export default [
   route("/sloane-new", "./sloanecol/sloanecol-new.tsx"),
   route("/sloane-new/:objectIndex", "./object-page.tsx"),
   route("/clive", "./clivecol/clivecol.tsx"),
+  route("/rdf-test", "./rdf-test.tsx"),
 ] satisfies RouteConfig;

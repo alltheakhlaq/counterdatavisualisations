@@ -12,9 +12,12 @@
     "@react-router/node": "^7.7.1",
     "@react-router/serve": "^7.7.1",
     "isbot": "^5.1.27",
+    "rdflib": "^2.3.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router": "^7.7.1"
+    "react-router": "^7.7.1",
+    "solid-namespace": "^0.5.4",
+    "use-local-storage": "^3.0.0"
   },
   "devDependencies": {
     "@react-router/dev": "^7.7.1",

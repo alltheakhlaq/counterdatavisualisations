@@ -27,12 +27,15 @@ type Pages = {
   "/clive": {
     params: {};
   };
+  "/rdf-test": {
+    params: {};
+  };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/sloane" | "/sloane-new" | "/sloane-new/:objectIndex" | "/clive";
+    page: "/" | "/sloane" | "/sloane-new" | "/sloane-new/:objectIndex" | "/clive" | "/rdf-test";
   };
   "routes/home.tsx": {
     id: "routes/home";
@@ -53,5 +56,9 @@ type RouteFiles = {
   "./clivecol/clivecol.tsx": {
     id: "clivecol/clivecol";
     page: "/clive";
+  };
+  "./rdf-test.tsx": {
+    id: "rdf-test";
+    page: "/rdf-test";
   };
 };

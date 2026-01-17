@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 
 const navItems = [
+  // TODO: fix home link
   { title: "Home", to: "/" },
   { title: "Documentation", to: "/documentation" },
   { title: "Vocabulary", to: "/Vocabulary" },
