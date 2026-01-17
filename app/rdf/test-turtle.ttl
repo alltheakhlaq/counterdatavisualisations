@@ -1,4 +1,83 @@
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+export default `
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://megothcapgemini.solidcommunity.net/profile/card#me> a foaf:Person ;
-  foaf:name "Test".
+<http://example.com/event/6817497d> a crm:E5_Event ;
+	rdfs:label "Winkelmann sees LaocoÃ¶n" ;
+	crm:P4_has_time-span <http://example.com/time/5c5f16fc>	 ;
+	crm:P12_occurred_in_the_presence_of <http://example.com/person/95cee8a7> , <http://example.com/object/23b1ddb2> ;
+	crm:P7_took_place_at <http://example.com/place/96ce9dee> .
+
+# IRIs have to be distinct
+
+<http://example.com/object/23b1ddb2> a crm:E22_Human-made_Object ;
+	rdfs:label "LaocoÃ¶n Group" ;
+	crm:P2_has_type <http://example.com/type/copy/a7b49f6a> .
+
+<http://example.com/type/copy/a7b49f6a> a crm:E55_Type ;
+	rdfs:label "Copy" .
+
+<http://example.com/person/95cee8a7> a crm:E21_Person ;
+	rdfs:label "Johann-Joachim Winkelmann" .
+	
+<http://example.com/time/5c5f16fc> a crm:E52_Time-span ;
+	rdfs:label "1755" .
+
+<http://example.com/place/96ce9dee> a crm:E53_Place ;
+	rdfs:label "Vatican, Rome" .
+
+<http://example.com/event/creation/da3548b4> a crm:E65_Creation ;
+	rdfs:label "Winkelmann writes history of the Art of Antiquity" ;
+	crm:P14_carried_out_by <http://example.com/person/95cee8a7> ;
+	crm:P94_has_created <http://example.com/information/2316e0b4> ;
+	crm:P4_has_time-span <http://example.com/time/d55085b0>	 .
+	
+<http://example.com/time/d55085b0> a crm:E52_Time-span ;
+	rdfs:label "1764" .
+
+<http://example.com/information/2316e0b4> a crm:E73_Information_Object ;
+		rdfs:label "History of the Art of Antiquity" ;
+	crm:P67_refers_to <http://example.com/object/23b1ddb2> .
+
+<http://example.com/event/production/29b60f4d> a crm:E12_Production ;
+	rdfs:label "Roman commision copy of the LaocoÃ¶n Group" ;
+	crm:P108_has_produced <http://example.com/object/23b1ddb2> ;
+	crm:P12_occurred_in_the_presence_of <http://example.com/object/1da07e92> .
+
+<http://example.com/object/1da07e92> a crm:E22_Human-made_Object ;
+	rdfs:label "LaocoÃ¶n Group" ;
+	crm:P2_has_type <http://example.com/type/hellenistic/93745ddf> .
+
+<http://example.com/type/hellenistic/93745ddf> a crm:E55_Type ;
+	rdfs:label "Hellenistic" .
+
+<http://example.com/event/birth/46e90bf4> a crm:E67_Birth ;
+	rdfs:label "Winkelmann's birth" ;
+	crm:P98_brought_into_life <http://example.com/person/95cee8a7> ;
+	crm:P96_by_mother <http://example.com/person/639e49e8> ;
+	crm:P7_took_place_at <http://example.com/place/b1a8dd6b> ;
+	crm:P4_has_time-span <http://example.com/time/572e3de3> .
+
+<http://example.com/time/572e3de3> a crm:E52_Time-span ;
+	rdfs:label "1717" .
+
+<http://example.com/person/639e49e8> a crm:E21_Person ;
+	rdfs:label "Anna-Maria Meyer" .
+
+<http://example.com/place/b1a8dd6b> a crm:E53_Place ;
+	rdfs:label "Stendal" .
+
+<http://example.com/event/death/07f84a6f> a crm:E69_Death ;
+	rdfs:label "Winkelmann's death" ;
+	crm:P100_was_death_of <http://example.com/person/95cee8a7> ;
+	crm:P7_took_place_at <http://example.com/place/a6b28b49> ;
+	crm:P4_has_time-span <http://example.com/time/e949ad84> .
+
+ <http://example.com/place/a6b28b49> a crm:E53_Place ;
+ 	rdfs:label "Trieste" .
+
+ <http://example.com/time/e949ad84> a crm:E52_Time-span ;
+ 	rdfs:label "1768" .
+`;
