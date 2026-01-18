@@ -270,10 +270,10 @@ function Collection$1({ title, mainImageSrc, description, collectionItems }) {
     ] }) : null
   ] });
 }
-const imageenslavedpeople = "/counterdatavisualisations/assets/Objects-displaying-enslaved-people-BlPMKPSZ.jpg";
+const imageenslavedpeople = "/assets/Objects-displaying-enslaved-people-BlPMKPSZ.jpg";
 const greybackground = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEWxsK62TYmqAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC";
-const bmimageenslavedpeople = "/counterdatavisualisations/assets/bm-Objects-displaying-enslaved-people-DkfBbLkk.png";
-const sloane = "/counterdatavisualisations/assets/sloane-BpOhpJ_U.webp";
+const bmimageenslavedpeople = "/assets/bm-Objects-displaying-enslaved-people-DkfBbLkk.png";
+const sloane = "/assets/sloane-BpOhpJ_U.webp";
 const miscEntry1796 = /* @__PURE__ */ jsxs("div", { children: [
   "Colonisers in the colonies always lived in the fear of slave revolts. There was a continuous anxiety about the enslaved people devising non-violent and violent ways to fight the inhumane practice of their enslavement. Resistance has always been a primary feature against colonial endeavours–often enough the colonial gaze tries to minimise them or reframe them as less powerful based on their magnitude. However, digging deep into the archives and collections, and reading them against the grain illustrates the persistent nature of these revolts against colonialism. The previous section illustrates the ways in which Sloane engaged with Slavery, and the brutality that it engendered. Equally important is to highlight the resistance that was continuously put up by the enslaved people to fight the colonial and white supremacist brutality. This text espouses the ideology that there is no failed resistance or failure in the practise of resisting, the fact that there is even an attempt at subjugation and disruption of colonial power in itself constitutes as success, even if the ultimate destination of complete tarnish is not reached.",
   /* @__PURE__ */ jsx("br", {}),
@@ -810,153 +810,82 @@ const body = `
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-
-# <http://example.com/event/6817497d> a crm:E5_Event ;
-# 	rdfs:label "Winkelmann sees LaocoÃ¶n" ;
-# 	crm:P4_has_time-span <http://example.com/time/5c5f16fc>	 ;
-# 	crm:P12_occurred_in_the_presence_of <http://example.com/person/95cee8a7> , <http://example.com/object/23b1ddb2> ;
-# 	crm:P7_took_place_at <http://example.com/place/96ce9dee> .
-
-# <http://example.com/object/23b1ddb2> a crm:E22_Human-made_Object ;
-# 	rdfs:label "LaocoÃ¶n Group" ;
-# 	crm:P2_has_type <http://example.com/type/copy/a7b49f6a> .
-
-# <http://example.com/type/copy/a7b49f6a> a crm:E55_Type ;
-# 	rdfs:label "Copy" .
-
-# <http://example.com/person/95cee8a7> a crm:E21_Person ;
-# 	rdfs:label "Johann-Joachim Winkelmann" .
-	
-# <http://example.com/time/5c5f16fc> a crm:E52_Time-span ;
-# 	rdfs:label "1755" .
-
-# <http://example.com/place/96ce9dee> a crm:E53_Place ;
-# 	rdfs:label "Vatican, Rome" .
-
-# <http://example.com/event/creation/da3548b4> a crm:E65_Creation ;
-# 	rdfs:label "Winkelmann writes history of the Art of Antiquity" ;
-# 	crm:P14_carried_out_by <http://example.com/person/95cee8a7> ;
-# 	crm:P94_has_created <http://example.com/information/2316e0b4> ;
-# 	crm:P4_has_time-span <http://example.com/time/d55085b0>	 .
-	
-# <http://example.com/time/d55085b0> a crm:E52_Time-span ;
-# 	rdfs:label "1764" .
-
-# <http://example.com/information/2316e0b4> a crm:E73_Information_Object ;
-# 		rdfs:label "History of the Art of Antiquity" ;
-# 	crm:P67_refers_to <http://example.com/object/23b1ddb2> .
-
-# <http://example.com/event/production/29b60f4d> a crm:E12_Production ;
-# 	rdfs:label "Roman commision copy of the LaocoÃ¶n Group" ;
-# 	crm:P108_has_produced <http://example.com/object/23b1ddb2> ;
-# 	crm:P12_occurred_in_the_presence_of <http://example.com/object/1da07e92> .
-
-# <http://example.com/object/1da07e92> a crm:E22_Human-made_Object ;
-# 	rdfs:label "LaocoÃ¶n Group" ;
-# 	crm:P2_has_type <http://example.com/type/hellenistic/93745ddf> .
-
-# <http://example.com/type/hellenistic/93745ddf> a crm:E55_Type ;
-# 	rdfs:label "Hellenistic" .
-
-# <http://example.com/event/birth/46e90bf4> a crm:E67_Birth ;
-# 	rdfs:label "Winkelmann's birth" ;
-# 	crm:P98_brought_into_life <http://example.com/person/95cee8a7> ;
-# 	crm:P96_by_mother <http://example.com/person/639e49e8> ;
-# 	crm:P7_took_place_at <http://example.com/place/b1a8dd6b> ;
-# 	crm:P4_has_time-span <http://example.com/time/572e3de3> .
-
-# <http://example.com/time/572e3de3> a crm:E52_Time-span ;
-# 	rdfs:label "1717" .
-
-# <http://example.com/person/639e49e8> a crm:E21_Person ;
-# 	rdfs:label "Anna-Maria Meyer" .
-
-# <http://example.com/place/b1a8dd6b> a crm:E53_Place ;
-# 	rdfs:label "Stendal" .
-
-# <http://example.com/event/death/07f84a6f> a crm:E69_Death ;
-# 	rdfs:label "Winkelmann's death" ;
-# 	crm:P100_was_death_of <http://example.com/person/95cee8a7> ;
-# 	crm:P7_took_place_at <http://example.com/place/a6b28b49> ;
-# 	crm:P4_has_time-span <http://example.com/time/e949ad84> .
-
-#  <http://example.com/place/a6b28b49> a crm:E53_Place ;
-#  	rdfs:label "Trieste" .
-
-#  <http://example.com/time/e949ad84> a crm:E52_Time-span ;
-#  	rdfs:label "1768" .
-
-
-<#sloane-collecting> a crm:E5_Event ;
-	rdfs:label "Sir Hans Sloane Collects objects of cultural and natural significance" ;
-	crm:P4_has_time-span <#duration-of-collecting>	 ;
-	crm:P12_occurred_in_the_presence_of <#collector> , <#collection-object> ; #E21 Person, #E22_Human-made_Object
+<http://example.com/event/6817497d> a crm:E5_Event ;
+	rdfs:label "Winkelmann sees LaocoÃ¶n" ;
+	crm:P4_has_time-span <http://example.com/time/5c5f16fc>	 ;
+	crm:P12_occurred_in_the_presence_of <http://example.com/person/95cee8a7> , <http://example.com/object/23b1ddb2> ;
+	crm:P7_took_place_at <http://example.com/place/96ce9dee> .
 
 # IRIs have to be distinct
 
-<#duration-of-collecting> a crm:E52_Time-span ;
-	rdfs:label "Years Sir Hans Sloane stated and stopped collecting" .
+<http://example.com/object/23b1ddb2> a crm:E22_Human-made_Object ;
+	rdfs:label "LaocoÃ¶n Group" ;
+	crm:P2_has_type <http://example.com/type/copy/a7b49f6a> .
 
-<#collector> a a crm:E21_Person ;
-  rdfs:label "Sir Hans Sloane" .
-  crm:P129i_is_subject_of <#collector-description>
+<http://example.com/type/copy/a7b49f6a> a crm:E55_Type ;
+	rdfs:label "Copy" .
 
-<#collection-object> a crm:E22_Human_made_Object ;
-	rdfs:label "Name of object" .
-	crm:P1_is_identified_by <#title-of-object> #E35 Title
-  crm:P7_took_place_at <#location-of-object-collection> #E53 Place
-  crm:P44_has_condition <#condition-of-object> #E3 Condition State
-  crm:P12_occurred_in_the_presence_of <#person-involved-in-collecting> #E21 Person (also add description of the person)
-  crm:P101_had_as_general_use <#significance-for-source-community> #E7 Activity
-  crm:P24i_changed_ownership_through <#acquisition-information> #	E8 Acquisition (use p2-has-type to record type of acquisition)
-  crm:P50_has_current_keeper <#current-holding-institution> # E74 Group (add title?)
-  crm:P104_is_subject_to <#access-to-the-physical-material> #E30 Rights
-  crm:P104_is_subject_to <#access-to-the-digital-material> #E30 Rights
-  crm:P104_is_subject_to <#legality-information> #E30 Rights
-  .
+<http://example.com/person/95cee8a7> a crm:E21_Person ;
+	rdfs:label "Johann-Joachim Winkelmann" .
+	
+<http://example.com/time/5c5f16fc> a crm:E52_Time-span ;
+	rdfs:label "1755" .
 
-<#title-of.object> a crm:E35_Title
-	rdfs:label "Name of object 1" .
+<http://example.com/place/96ce9dee> a crm:E53_Place ;
+	rdfs:label "Vatican, Rome" .
 
-<#location-of-object-collection>  a crm: E53 Place
-	rdfs:label "Location where object 1 was acquired from" .
+<http://example.com/event/creation/da3548b4> a crm:E65_Creation ;
+	rdfs:label "Winkelmann writes history of the Art of Antiquity" ;
+	crm:P14_carried_out_by <http://example.com/person/95cee8a7> ;
+	crm:P94_has_created <http://example.com/information/2316e0b4> ;
+	crm:P4_has_time-span <http://example.com/time/d55085b0>	 .
+	
+<http://example.com/time/d55085b0> a crm:E52_Time-span ;
+	rdfs:label "1764" .
 
-<#condition-of-object>  a crm: E3 Condition State
-	rdfs:label "Condition of object 1" .
+<http://example.com/information/2316e0b4> a crm:E73_Information_Object ;
+		rdfs:label "History of the Art of Antiquity" ;
+	crm:P67_refers_to <http://example.com/object/23b1ddb2> .
 
-<#person-involved-in-collecting> a crm: E21_Person
-	rdfs:label "name of other person involved in acquiring of the object" 
-  crm:P129i_is_subject_of <#description-of-actor-involved-in-collecting> # E73 Information Object
-.
+<http://example.com/event/production/29b60f4d> a crm:E12_Production ;
+	rdfs:label "Roman commision copy of the LaocoÃ¶n Group" ;
+	crm:P108_has_produced <http://example.com/object/23b1ddb2> ;
+	crm:P12_occurred_in_the_presence_of <http://example.com/object/1da07e92> .
 
-<#description-of-actor-involved-in-collecting> a crm: E73_Information_Object
-	rdfs:label "description of other person involved in acquiring of the object" .
+<http://example.com/object/1da07e92> a crm:E22_Human-made_Object ;
+	rdfs:label "LaocoÃ¶n Group" ;
+	crm:P2_has_type <http://example.com/type/hellenistic/93745ddf> .
 
-<#significance-for-source-community> a crm: E7_Activity
-	rdfs:label "cultural significance of object for the source community" .
+<http://example.com/type/hellenistic/93745ddf> a crm:E55_Type ;
+	rdfs:label "Hellenistic" .
 
-<#acquisition-information> a crm:	E8_Acquisition
-	rdfs:label "circumstances under which it was acquired" 
-  crm:P2_has_type <#acquisiotion-type> # E55 Type
-  .
+<http://example.com/event/birth/46e90bf4> a crm:E67_Birth ;
+	rdfs:label "Winkelmann's birth" ;
+	crm:P98_brought_into_life <http://example.com/person/95cee8a7> ;
+	crm:P96_by_mother <http://example.com/person/639e49e8> ;
+	crm:P7_took_place_at <http://example.com/place/b1a8dd6b> ;
+	crm:P4_has_time-span <http://example.com/time/572e3de3> .
 
-<#acquisiotion-type> a crm: E55_Type
-	rdfs:label "detail of circumstances under which it was acquired" .
+<http://example.com/time/572e3de3> a crm:E52_Time-span ;
+	rdfs:label "1717" .
 
- <#current-holding-institution> a crm:E74_Group
- 	rdfs:label "name of holding institution" .
+<http://example.com/person/639e49e8> a crm:E21_Person ;
+	rdfs:label "Anna-Maria Meyer" .
 
-<#access-to-the-physical-material> a crm:E30_Rights
- 	rdfs:label "access to physical material" .
-  #add politics of decomposition here?
+<http://example.com/place/b1a8dd6b> a crm:E53_Place ;
+	rdfs:label "Stendal" .
 
+<http://example.com/event/death/07f84a6f> a crm:E69_Death ;
+	rdfs:label "Winkelmann's death" ;
+	crm:P100_was_death_of <http://example.com/person/95cee8a7> ;
+	crm:P7_took_place_at <http://example.com/place/a6b28b49> ;
+	crm:P4_has_time-span <http://example.com/time/e949ad84> .
 
-<#access-to-the-digital-material> a crm:E30_Rights
- 	rdfs:label "access to physical material" .
+ <http://example.com/place/a6b28b49> a crm:E53_Place ;
+ 	rdfs:label "Trieste" .
 
-<#legality-information> a crm:E30_Rights
- 	rdfs:label "Contemporary policies and legal frameworks related to the object" .
-
+ <http://example.com/time/e949ad84> a crm:E52_Time-span ;
+ 	rdfs:label "1768" .
 `;
 const ns = solidNamespace($rdf);
 const CRM = $rdf.Namespace("http://www.cidoc-crm.org/cidoc-crm/");
@@ -995,7 +924,7 @@ const route6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   default: rdfTest
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/counterdatavisualisationsassets/entry.client-DAX0zq9B.js", "imports": ["/counterdatavisualisationsassets/chunk-C37GKA54-3nktgu46.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/counterdatavisualisationsassets/root-CDZZ8g-H.js", "imports": ["/counterdatavisualisationsassets/chunk-C37GKA54-3nktgu46.js"], "css": ["/counterdatavisualisationsassets/root-D9T9_odf.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home": { "id": "routes/home", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/counterdatavisualisationsassets/home-CfUbPLda.js", "imports": ["/counterdatavisualisationsassets/chunk-C37GKA54-3nktgu46.js", "/counterdatavisualisationsassets/nav-HA_jq9uc.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "sloanecol/sloanecol": { "id": "sloanecol/sloanecol", "parentId": "root", "path": "/sloane", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/counterdatavisualisationsassets/sloanecol-C0t7oLSu.js", "imports": ["/counterdatavisualisationsassets/chunk-C37GKA54-3nktgu46.js", "/counterdatavisualisationsassets/nav-HA_jq9uc.js", "/counterdatavisualisationsassets/misc-entry-1796-fum5HhUB.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "sloanecol/sloanecol-new": { "id": "sloanecol/sloanecol-new", "parentId": "root", "path": "/sloane-new", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/counterdatavisualisationsassets/sloanecol-new-Ci80Y9JZ.js", "imports": ["/counterdatavisualisationsassets/sloanecol-new-duiFMiyX.js", "/counterdatavisualisationsassets/chunk-C37GKA54-3nktgu46.js", "/counterdatavisualisationsassets/nav-HA_jq9uc.js", "/counterdatavisualisationsassets/misc-entry-1796-fum5HhUB.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "object-page": { "id": "object-page", "parentId": "root", "path": "/sloane-new/:objectIndex", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/counterdatavisualisationsassets/object-page-CdV7DTm5.js", "imports": ["/counterdatavisualisationsassets/chunk-C37GKA54-3nktgu46.js", "/counterdatavisualisationsassets/nav-HA_jq9uc.js", "/counterdatavisualisationsassets/sloanecol-new-duiFMiyX.js", "/counterdatavisualisationsassets/misc-entry-1796-fum5HhUB.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "clivecol/clivecol": { "id": "clivecol/clivecol", "parentId": "root", "path": "/clive", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/counterdatavisualisationsassets/clivecol-RjH5wvYE.js", "imports": ["/counterdatavisualisationsassets/chunk-C37GKA54-3nktgu46.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "rdf-test": { "id": "rdf-test", "parentId": "root", "path": "/rdf-test", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/counterdatavisualisationsassets/rdf-test-vfNvCdwL.js", "imports": ["/counterdatavisualisationsassets/chunk-C37GKA54-3nktgu46.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/counterdatavisualisationsassets/manifest-c161b8e9.js", "version": "c161b8e9", "sri": void 0 };
+const serverManifest = { "entry": { "module": "/assets/entry.client-DAX0zq9B.js", "imports": ["/assets/chunk-C37GKA54-3nktgu46.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-CDZZ8g-H.js", "imports": ["/assets/chunk-C37GKA54-3nktgu46.js"], "css": ["/assets/root-D9T9_odf.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home": { "id": "routes/home", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/home-CfUbPLda.js", "imports": ["/assets/chunk-C37GKA54-3nktgu46.js", "/assets/nav-HA_jq9uc.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "sloanecol/sloanecol": { "id": "sloanecol/sloanecol", "parentId": "root", "path": "/sloane", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/sloanecol-D9QuTGhd.js", "imports": ["/assets/chunk-C37GKA54-3nktgu46.js", "/assets/nav-HA_jq9uc.js", "/assets/misc-entry-1796-D0665VOr.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "sloanecol/sloanecol-new": { "id": "sloanecol/sloanecol-new", "parentId": "root", "path": "/sloane-new", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/sloanecol-new-BFcDOj1M.js", "imports": ["/assets/sloanecol-new-CjSIVXak.js", "/assets/chunk-C37GKA54-3nktgu46.js", "/assets/nav-HA_jq9uc.js", "/assets/misc-entry-1796-D0665VOr.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "object-page": { "id": "object-page", "parentId": "root", "path": "/sloane-new/:objectIndex", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/object-page-o_jnIBbX.js", "imports": ["/assets/chunk-C37GKA54-3nktgu46.js", "/assets/nav-HA_jq9uc.js", "/assets/sloanecol-new-CjSIVXak.js", "/assets/misc-entry-1796-D0665VOr.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "clivecol/clivecol": { "id": "clivecol/clivecol", "parentId": "root", "path": "/clive", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/clivecol-RjH5wvYE.js", "imports": ["/assets/chunk-C37GKA54-3nktgu46.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "rdf-test": { "id": "rdf-test", "parentId": "root", "path": "/rdf-test", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/rdf-test-QsY-zmyp.js", "imports": ["/assets/chunk-C37GKA54-3nktgu46.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-81bcfee3.js", "version": "81bcfee3", "sri": void 0 };
 const assetsBuildDirectory = "build/client";
 const basename = "/";
 const future = { "unstable_middleware": false, "unstable_optimizeDeps": false, "unstable_splitRouteModules": false, "unstable_subResourceIntegrity": false, "unstable_viteEnvironmentApi": false };
@@ -1003,7 +932,7 @@ const ssr = true;
 const isSpaMode = false;
 const prerender = [];
 const routeDiscovery = { "mode": "lazy", "manifestPath": "/__manifest" };
-const publicPath = "/counterdatavisualisations";
+const publicPath = "/";
 const entry = { module: entryServer };
 const routes = {
   "root": {
