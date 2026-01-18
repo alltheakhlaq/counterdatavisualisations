@@ -1,0 +1,145 @@
+{
+  "_chunk-C37GKA54-3nktgu46.js": {
+    "file": "assets/chunk-C37GKA54-3nktgu46.js",
+    "name": "chunk-C37GKA54"
+  },
+  "_jsonld-uT9Owjhf.js": {
+    "file": "assets/jsonld-uT9Owjhf.js",
+    "name": "jsonld",
+    "isDynamicEntry": true,
+    "imports": [
+      "_chunk-C37GKA54-3nktgu46.js"
+    ]
+  },
+  "_misc-entry-1796-D0665VOr.js": {
+    "file": "assets/misc-entry-1796-D0665VOr.js",
+    "name": "misc-entry-1796",
+    "imports": [
+      "_chunk-C37GKA54-3nktgu46.js"
+    ],
+    "assets": [
+      "assets/Objects-displaying-enslaved-people-BlPMKPSZ.jpg",
+      "assets/bm-Objects-displaying-enslaved-people-DkfBbLkk.png",
+      "assets/sloane-BpOhpJ_U.webp"
+    ]
+  },
+  "_nav-HA_jq9uc.js": {
+    "file": "assets/nav-HA_jq9uc.js",
+    "name": "nav",
+    "imports": [
+      "_chunk-C37GKA54-3nktgu46.js"
+    ]
+  },
+  "_sloanecol-new-CjSIVXak.js": {
+    "file": "assets/sloanecol-new-CjSIVXak.js",
+    "name": "sloanecol-new",
+    "imports": [
+      "_chunk-C37GKA54-3nktgu46.js",
+      "_nav-HA_jq9uc.js",
+      "_misc-entry-1796-D0665VOr.js"
+    ]
+  },
+  "app/clivecol/clivecol.tsx?__react-router-build-client-route": {
+    "file": "assets/clivecol-RjH5wvYE.js",
+    "name": "clivecol",
+    "src": "app/clivecol/clivecol.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_chunk-C37GKA54-3nktgu46.js"
+    ]
+  },
+  "app/object-page.tsx?__react-router-build-client-route": {
+    "file": "assets/object-page-o_jnIBbX.js",
+    "name": "object-page",
+    "src": "app/object-page.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_chunk-C37GKA54-3nktgu46.js",
+      "_nav-HA_jq9uc.js",
+      "_sloanecol-new-CjSIVXak.js",
+      "_misc-entry-1796-D0665VOr.js"
+    ]
+  },
+  "app/rdf-test.tsx?__react-router-build-client-route": {
+    "file": "assets/rdf-test-QsY-zmyp.js",
+    "name": "rdf-test",
+    "src": "app/rdf-test.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_chunk-C37GKA54-3nktgu46.js"
+    ],
+    "dynamicImports": [
+      "_jsonld-uT9Owjhf.js"
+    ]
+  },
+  "app/root.tsx?__react-router-build-client-route": {
+    "file": "assets/root-fQcIxvcv.js",
+    "name": "root",
+    "src": "app/root.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_chunk-C37GKA54-3nktgu46.js"
+    ],
+    "css": [
+      "assets/root-CMir3hk3.css"
+    ]
+  },
+  "app/routes/home.tsx?__react-router-build-client-route": {
+    "file": "assets/home-CfUbPLda.js",
+    "name": "home",
+    "src": "app/routes/home.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_chunk-C37GKA54-3nktgu46.js",
+      "_nav-HA_jq9uc.js"
+    ]
+  },
+  "app/sloane.webp": {
+    "file": "assets/sloane-BpOhpJ_U.webp",
+    "src": "app/sloane.webp"
+  },
+  "app/sloanecol/Objects-displaying-enslaved-people.jpg": {
+    "file": "assets/Objects-displaying-enslaved-people-BlPMKPSZ.jpg",
+    "src": "app/sloanecol/Objects-displaying-enslaved-people.jpg"
+  },
+  "app/sloanecol/bm-Objects-displaying-enslaved-people.png": {
+    "file": "assets/bm-Objects-displaying-enslaved-people-DkfBbLkk.png",
+    "src": "app/sloanecol/bm-Objects-displaying-enslaved-people.png"
+  },
+  "app/sloanecol/sloanecol-new.tsx?__react-router-build-client-route": {
+    "file": "assets/sloanecol-new-BFcDOj1M.js",
+    "name": "sloanecol-new",
+    "src": "app/sloanecol/sloanecol-new.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_sloanecol-new-CjSIVXak.js",
+      "_chunk-C37GKA54-3nktgu46.js",
+      "_nav-HA_jq9uc.js",
+      "_misc-entry-1796-D0665VOr.js"
+    ]
+  },
+  "app/sloanecol/sloanecol.tsx?__react-router-build-client-route": {
+    "file": "assets/sloanecol-D9QuTGhd.js",
+    "name": "sloanecol",
+    "src": "app/sloanecol/sloanecol.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_chunk-C37GKA54-3nktgu46.js",
+      "_nav-HA_jq9uc.js",
+      "_misc-entry-1796-D0665VOr.js"
+    ]
+  },
+  "app/welcome/logo.png": {
+    "file": "assets/logo-qXbpRKhU.png",
+    "src": "app/welcome/logo.png"
+  },
+  "node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx": {
+    "file": "assets/entry.client-DAX0zq9B.js",
+    "name": "entry.client",
+    "src": "node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx",
+    "isEntry": true,
+    "imports": [
+      "_chunk-C37GKA54-3nktgu46.js"
+    ]
+  }
+}
